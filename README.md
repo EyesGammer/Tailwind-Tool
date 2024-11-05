@@ -34,3 +34,8 @@ Then : ```source ~/.profile```
 translate-tailwind $(find ../templates -type f -name "*.php") js/*.js && mv tailwind-out-*.css style.css
 ```
 The above command will get every PHP files into the folder "../templates", and every JavaScript files into the folder "js" to generate a CSS stylesheet using TailwindCSS.
+
+To use the special mode :
+```
+SPECIAL=1 translate-tailwind $(find ../templates -type f -name "*.php") js/*.js && mv tailwind-out-*.css style.css
+```
