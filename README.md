@@ -18,3 +18,19 @@ To use the "special" build script, you need to create a folder called 'ssrc' tha
 ```
 
 The minify build mode will use the basic "src" folder to compile. And the "input.css" file inside it, is the basic TailwindCSS file.
+
+
+## How to use it anywhere
+To use this script anywhere, please put the following code into your ```~/.profile``` _(or similar)_ file :
+```
+translate-tailwind() {
+  "/Users/username/Documents/Tools/TailwindKumo/translate-tailwind.sh" $@
+}
+```
+Then : ```source ~/.profile```
+
+## Example of usage
+```
+translate-tailwind $(find ../templates -type f -name "*.php") js/*.js && mv tailwind-out-*.css style.css
+```
+The above command will get every PHP files into the folder "../templates", and every JavaScript files into the folder "js" to generate a CSS stylesheet using TailwindCSS.
